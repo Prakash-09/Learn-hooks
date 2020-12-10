@@ -1,23 +1,26 @@
 import React from 'react';
 import './App.css';
 import { Row, Col, Card, CardBody, CardHeader } from 'reactstrap';
-import ClassCounter from './components/useState/ClassCounter';
-import HooksCounter from './components/useState/HooksCounter';
-import HooksForm from './components/useState/HooksForm';
-import HooksFormFields from './components/useState/HooksFormFields';
-import ClassCounterTwo from './components/useEffect/ClassCounterTwo';
-import HooksCounterTwo from './components/useEffect/HooksCounterTwo';
-import MouseContainer from './components/useEffect/MouseContainer';
-import ComponentB from './components/useContext/ComponentB';
-import UserForm from './components/customHooks/UserForm';
+// import ClassCounter from './components/useState/ClassCounter';
+// import HooksCounter from './components/useState/HooksCounter';
+// import HooksForm from './components/useState/HooksForm';
+// import HooksFormFields from './components/useState/HooksFormFields';
+// import ClassCounterTwo from './components/useEffect/ClassCounterTwo';
+// import HooksCounterTwo from './components/useEffect/HooksCounterTwo';
+// import MouseContainer from './components/useEffect/MouseContainer';
+// import ComponentB from './components/useContext/ComponentB';
+// import UserForm from './components/customHooks/useInput/UserForm';
+// import DocTitleOne from './components/customHooks/useDocTitle/DocTitleOne.js';
+// import DocTitleTwo from './components/customHooks/useDocTitle/DocTitleTwo';
+import SolutionOptions from './components/solutions/SolutionOptions'
 
-export const UserContext = React.createContext()
-export const ChannelContext = React.createContext()
+// export const UserContext = React.createContext()
+// export const ChannelContext = React.createContext()
 
 function App() {
   return (
     <div className="App">
-      <Row xs="2" className="m-0">
+      {/* <Row xs="2" className="m-0">
         <Col>
           <Card className="mt-2">
             <CardHeader>Using Class component</CardHeader>
@@ -130,6 +133,25 @@ function App() {
               <UserForm />
             </CardBody>
           </Card>
+        </Col>
+        <Col>
+          <Card className="mt-2">
+          <CardHeader>
+              <Row>
+                <Col className="text-left">Custom hooks</Col>
+                <Col className="text-right">useDocTitle</Col>
+              </Row>
+            </CardHeader>
+            <CardBody>
+              <span className="m-1 float-left"><DocTitleOne /></span>
+              <span className="m-1 float-right"><DocTitleTwo /></span>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row> */}
+      <Row>
+        <Col>
+          <SolutionOptions />
         </Col>
       </Row>
     </div>
