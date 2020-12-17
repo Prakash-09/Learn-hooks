@@ -1,0 +1,4 @@
+.nav-tabs .nav-link.active{
+    border-bottom: 3px solid #1a73e8 !important;
+    border: none;
+}

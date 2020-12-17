@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 import useDocTitle from './UseDocTitle';
 
 export default function DocTitleOne() {
@@ -8,7 +8,7 @@ export default function DocTitleOne() {
     useDocTitle(count)
 
     return(
-        <div className="text-center">
+        <div className="text-center m-2">
             <Button variant = "primary" size = "sm" onClick={() => setCount( count + 1 )}> Count {count} </Button>
         </div>
     );

@@ -1,159 +1,147 @@
 import React from 'react';
 import './App.css';
-import { Row, Col, Card, CardBody, CardHeader } from 'reactstrap';
-// import ClassCounter from './components/useState/ClassCounter';
-// import HooksCounter from './components/useState/HooksCounter';
-// import HooksForm from './components/useState/HooksForm';
-// import HooksFormFields from './components/useState/HooksFormFields';
-// import ClassCounterTwo from './components/useEffect/ClassCounterTwo';
-// import HooksCounterTwo from './components/useEffect/HooksCounterTwo';
-// import MouseContainer from './components/useEffect/MouseContainer';
-// import ComponentB from './components/useContext/ComponentB';
-// import UserForm from './components/customHooks/useInput/UserForm';
-// import DocTitleOne from './components/customHooks/useDocTitle/DocTitleOne.js';
-// import DocTitleTwo from './components/customHooks/useDocTitle/DocTitleTwo';
-import SolutionOptions from './components/solutions/SolutionOptions'
+import { Tabs, Tab } from 'react-bootstrap';
 
-// export const UserContext = React.createContext()
-// export const ChannelContext = React.createContext()
+//REACT BASIC HOOKS
+import ClassCounter from './components/useState/ClassCounter';
+import HooksCounter from './components/useState/HooksCounter';
+import HooksForm from './components/useState/HooksForm';
+import HooksFormFields from './components/useState/HooksFormFields';
+import ClassCounterTwo from './components/useEffect/ClassCounterTwo';
+import HooksCounterTwo from './components/useEffect/HooksCounterTwo';
+import MouseContainer from './components/useEffect/MouseContainer';
+import ComponentB from './components/useContext/ComponentB';
+
+// FROM HERE USEREDUCERS
+import SimpleState from './components/useReducer/SimpleState';
+import ComplexState from './components/useReducer/ComplexState';
+import MultipleUseReducers from './components/useReducer/MultipleUseReducers';
+import UseReducerWithUseContext from './components/useReducerWithUseContext/UseRducerWithUseContext';
+import GetApiOne from './components/getApiWithHooks/GetApiOne';
+import GetApiTwo from './components/getApiWithHooks/GetApiTwo';
+
+// FROM HERE USECALLBACK
+import ParentComponent from './components/useCallBack/ParentComponent';
+
+// FROM HERE USEMEMO
+import UseMemoParent from './components/useMemo/UseMemoParent';
+
+// FROM HERE USEREF
+import FocusInput from './components/useRef/FocusInput';
+import ClassTimer from './components/useRef/ClassTimer';
+import FunctionTimer from './components/useRef/FunctionTimer';
+
+// FROM HERE CUSTOM HOOKS
+import DocTitleOne from './components/customHooks/useDocTitle/DocTitleOne.js';
+import DocTitleTwo from './components/customHooks/useDocTitle/DocTitleTwo';
+import CounterOne from './components/customHooks/useCounter/CounterOne';
+import CounterTwo from './components/customHooks/useCounter/CounterTwo';
+import UserForm from './components/customHooks/useInput/UserForm';
+
+// FROM HERE HOOKS CRUD
+import CRUD from './components/hooksCRUD/mainComponent/CRUD';
+
+
+export const UserContext = React.createContext()
+export const ChannelContext = React.createContext()
 
 function App() {
   return (
     <div className="App">
-      {/* <Row xs="2" className="m-0">
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>Using Class component</CardHeader>
-            <CardBody>
-              <ClassCounter />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>
-              <Row>
-                <Col className="text-left">Using Func component(Hooks)</Col>
-                <Col className="text-right">useState</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <HooksCounter />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>
-              <Row>
-                <Col className="text-left">Form in hooks(Hardcoded)</Col>
-                <Col className="text-right">useState</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <HooksForm />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>
-              <Row>
-                <Col className="text-left">Form in hooks(Dynamic)</Col>
-                <Col className="text-right">useState</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <HooksFormFields />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>
-              <Row>
-                <Col className="text-left">In Class Component update document title</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <ClassCounterTwo />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>
-              <Row>
-                <Col className="text-left">In Hooks Used Api </Col>
-                <Col className="text-right">useState & useEffect</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <HooksCounterTwo />
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Card className="mt-2">
-            <CardBody>
-              <MouseContainer />
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-      <Row xs="2">
-        <Col>
-          <Card className="mt-2">
-            <CardHeader>
-              <Row>
-                <Col className="text-left">in Hooks</Col>
-                <Col className="text-right">useContext</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <UserContext.Provider value={'Prakash'}>
-                <ChannelContext.Provider value={'React Js'}>
-                  <ComponentB />
-                </ChannelContext.Provider>
-              </UserContext.Provider>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-          <CardHeader>
-              <Row>
-                <Col className="text-left">Custom hooks</Col>
-                <Col className="text-right">useInput</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <UserForm />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="mt-2">
-          <CardHeader>
-              <Row>
-                <Col className="text-left">Custom hooks</Col>
-                <Col className="text-right">useDocTitle</Col>
-              </Row>
-            </CardHeader>
-            <CardBody>
-              <span className="m-1 float-left"><DocTitleOne /></span>
-              <span className="m-1 float-right"><DocTitleTwo /></span>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row> */}
-      <Row>
-        <Col>
-          <SolutionOptions />
-        </Col>
-      </Row>
+      <Tabs defaultActiveKey="useRef" id="navbar">
+
+        {/* FROM HERE REACT BASIC HOOKS */}
+        <Tab eventKey="ClassCounter" title="ClassCounter">
+          <ClassCounter />
+        </Tab>
+        <Tab eventKey="HooksCounter" title="HooksCounter">
+          <HooksCounter />
+        </Tab>
+        <Tab eventKey="HooksForm" title="Form in hooks hardcoded">
+          <HooksForm />
+        </Tab>
+        <Tab eventKey="HooksFormFields" title="Form in hooks dynamic">
+          <HooksFormFields />
+        </Tab>
+        <Tab eventKey="ClassCounterTwo" title="ClassCounterTwo">
+          <ClassCounterTwo />
+        </Tab>
+        <Tab eventKey="HooksCounterTwo" title="HooksCounterTwo">
+          <HooksCounterTwo />
+        </Tab>
+        <Tab eventKey="MouseContainer" title="MouseContainer">
+          <MouseContainer />
+        </Tab>
+        <Tab eventKey="useContext" title="useContext">
+          <UserContext.Provider value={'Prakash'}>
+            <ChannelContext.Provider value={'React Js'}>
+              <ComponentB />
+            </ChannelContext.Provider>
+          </UserContext.Provider>
+        </Tab>
+
+        {/* FROM HERE USEREDUCERS */}
+        <Tab eventKey="SimpleState" title="SimpleState"> 
+          <SimpleState />
+        </Tab>
+        <Tab eventKey="ComplexState" title="ComplexState">
+          <ComplexState />
+        </Tab>
+        <Tab eventKey="MultipleUseReducers" title="MultipleUseReducers">
+          <MultipleUseReducers />
+        </Tab>
+        <Tab eventKey="UseReducerWithUseContext" title="UseReducerWithUseContext">
+          <UseReducerWithUseContext />
+        </Tab>
+        <Tab eventKey="GetApiOne" title="GetApiOne">
+          <h5>By using useState and useEffect</h5>
+          <GetApiOne />
+        </Tab>
+        <Tab eventKey="GetApiTwo" title="GetApiTwo">
+          <h5>By using useReducer and useEffect</h5>
+          <GetApiTwo />
+        </Tab>
+
+        {/* FROM HERE USECALLBACK */}
+        <Tab eventKey="useCallBack" title="useCallBack">
+          <ParentComponent />
+        </Tab>
+
+        {/* FROM HERE USEMEMO */}
+        <Tab eventKey="useMemo" title="useMemo">
+          <UseMemoParent />
+        </Tab>
+
+        {/* FROM HERE USEREF */}
+        <Tab eventKey="useRef" title="useRef">
+          <FocusInput />
+        </Tab>
+        <Tab eventKey="useRefTimer" title="useRef for Timer">
+          <ClassTimer />
+          <FunctionTimer />
+        </Tab>
+
+        {/* FROM HERE CUSTOM HOOKS */}                                             
+        <Tab eventKey="useDocTitle" title="useDocTitle">
+          <h5>Custom hook</h5>
+          <DocTitleOne />
+          <DocTitleTwo />
+        </Tab>
+        <Tab eventKey="useInput" title="useInput">   
+          <h5>Custom hook</h5>
+          <UserForm />
+        </Tab>
+        <Tab eventKey="useCounter" title="useCounter">   
+          <h5>Custom hook</h5>
+          <CounterOne />
+          <CounterTwo />
+        </Tab>
+
+        {/* FROM HERE HOOKS CRUD */}  
+        <Tab eventKey="hooksCRUD" title="hooksCRUD">
+          <CRUD />
+        </Tab>
+      </Tabs>
     </div>
   );
 }
