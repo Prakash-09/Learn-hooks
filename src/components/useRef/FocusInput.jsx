@@ -9,8 +9,9 @@ export default function FocusInput() {
 
     return(
         <div className="text-center">
-            <input ref={inputRef} type="text" />
-            <input  type="text" />
+            {/* {console.log("inputRef", inputRef)} */}
+            <input ref={inputRef} type="text" /><br />
+            <input ref={inputRef}  type="text" />
         </div>
     );
 }

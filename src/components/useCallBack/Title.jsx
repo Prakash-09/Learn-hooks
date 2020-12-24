@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Title() {
-    console.log('Rendering Title')
+    // console.log('Rendering Title')
 
     return(
         <div className="m-2">

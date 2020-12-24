@@ -7,14 +7,15 @@ export default function FunctionTimer() {
 
     useEffect(() => {
         intervalRef.current = setInterval(() => {
-            setTimer(prevTimer => prevTimer + 1)
+            setTimer(timer + 1)
         }, 1000)
         return() => {
             clearInterval(intervalRef.current)
         };
-    }, [])
+    }, [timer])
     return(
         <div className="text-center m-2">
+            {/* {console.log("intervalRef", intervalRef)} */}
             Hooks timer - {timer}
             <Button variant="primary" size="sm" onClick={() => clearInterval(intervalRef.current)} className="ml-3">Clear</Button>
         </div>
